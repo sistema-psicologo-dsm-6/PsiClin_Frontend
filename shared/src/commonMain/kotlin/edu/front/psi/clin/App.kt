@@ -194,6 +194,7 @@ fun App() {
 
                     val itensMenu = listOf(
                         MenuItem("Cadastrar Paciente", "pessoa", "paciente"),
+                        MenuItem("Cadastrar Horário Disponível", "agenda", "horario"),
                         
         
                     )
@@ -217,7 +218,11 @@ fun App() {
                 ) {
                     if (tela.value == "paciente") {
                         PacienteFormulario()
-                    } 
+                    } else if (tela.value == "horario") {
+                        HorarioDisponivelFormulario()
+                    }
+
+
                 }
             }
         }
