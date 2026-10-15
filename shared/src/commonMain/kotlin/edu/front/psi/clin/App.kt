@@ -194,9 +194,12 @@ fun App() {
 
                     val itensMenu = listOf(
                         MenuItem("Cadastrar Paciente", "pessoa", "paciente"),
+                        MenuItem("Cadastrar Funcionário", "pessoa", "funcionario"),
+                        MenuItem("Cadastrar Convênio", "documento", "convenio"),
                         MenuItem("Cadastrar Horário Disponível", "agenda", "horario"),
                         MenuItem("Cadastrar Prontuário", "documento", "prontuario"),
                         MenuItem("Cadastrar Sala de Atendimento", "documento", "sala"),
+                        MenuItem("Cadastrar Evolução Clínica", "documento", "evolucao"),
                     )
 
                     for (item in itensMenu) {
@@ -218,6 +221,12 @@ fun App() {
                 ) {
                     if (tela.value == "paciente") {
                         PacienteFormulario()
+                    } else if (tela.value == "evolucao") {
+                        EvolucaoClinicaFormulario()
+                    } else if (tela.value == "convenio") {
+                        ConvenioFormulario()
+                    } else if (tela.value == "funcionario") {
+                        FuncionarioFormulario()
                     } else if (tela.value == "horario") {
                         HorarioDisponivelFormulario()
                     } else if (tela.value == "prontuario") {
