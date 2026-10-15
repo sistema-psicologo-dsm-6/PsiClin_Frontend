@@ -195,6 +195,12 @@ fun App() {
                     val itensMenu = listOf(
                         MenuItem("Cadastrar Paciente", "pessoa", "paciente"),
                         MenuItem("Cadastrar Horário Disponível", "agenda", "horario"),
+                        MenuItem("Cadastrar Agenda", "agenda", "agenda"),
+                        MenuItem("Bloqueio de Agenda", "agenda", "bloqueio"),
+                        MenuItem("Cadastrar Psicólogo", "pessoa", "psicologo"),
+                        MenuItem("Cadastrar Recepcionista", "pessoa", "recepcionista"),
+                        MenuItem("Cadastrar Tipo de Atendimento", "documento", "tipo"),
+
                         MenuItem("Cadastrar Prontuário", "documento", "prontuario"),
                         MenuItem("Cadastrar Sala de Atendimento", "documento", "sala"),
                     )
@@ -218,8 +224,18 @@ fun App() {
                 ) {
                     if (tela.value == "paciente") {
                         PacienteFormulario()
-                    } else if (tela.value == "horario") {
+                    } else if (tela.value == "agenda") {
+                        AgendaFormulario()
+                    } else if (tela.value == "bloqueio") {
+                        BloqueioAgendaFormulario()
+                    }  else if (tela.value == "horario") {
                         HorarioDisponivelFormulario()
+                    } else if (tela.value == "psicologo") {
+                        PsicologoFormulario()
+                    } else if (tela.value == "recepcionista") {
+                        RecepcionistaFormulario()
+                    } else if (tela.value == "tipo") {
+                        TipoAtendimentoFormulario()
                     } else if (tela.value == "prontuario") {
                         ProntuarioFormulario()
                     } else if (tela.value == "sala") {
