@@ -21,6 +21,10 @@ Os nomes abaixo são as identificações registradas nos commits do frontend. As
 | --- | --- |
 | Eduardajs3 | Paciente e Horário Disponível |
 | Dalvinha75 | Prontuário e Sala de Atendimento |
+| agostinho58 | Agenda e BloqueioAgenda |
+| Hush9k | Entidade 1 e Entidade 2 |
+| westesmso| Psicologo, Recepcionista e TipoAtendimento|
+
 
 ## Sobre o projeto
 
