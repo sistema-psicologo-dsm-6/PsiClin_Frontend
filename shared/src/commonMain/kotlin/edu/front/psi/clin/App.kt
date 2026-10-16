@@ -197,6 +197,12 @@ fun App() {
                         MenuItem("Cadastrar Funcionário", "pessoa", "funcionario"),
                         MenuItem("Cadastrar Convênio", "documento", "convenio"),
                         MenuItem("Cadastrar Horário Disponível", "agenda", "horario"),
+                        MenuItem("Cadastrar Agenda", "agenda", "agenda"),
+                        MenuItem("Bloqueio de Agenda", "agenda", "bloqueio"),
+                        MenuItem("Cadastrar Psicólogo", "pessoa", "psicologo"),
+                        MenuItem("Cadastrar Recepcionista", "pessoa", "recepcionista"),
+                        MenuItem("Cadastrar Tipo de Atendimento", "documento", "tipo"),
+                       MenuItem("Cadastrar Pagamento", "documento", "pagamento"),
                         MenuItem("Cadastrar Prontuário", "documento", "prontuario"),
                         MenuItem("Cadastrar Sala de Atendimento", "documento", "sala"),
                         MenuItem("Cadastrar Evolução Clínica", "documento", "evolucao"),
@@ -227,12 +233,24 @@ fun App() {
                         ConvenioFormulario()
                     } else if (tela.value == "funcionario") {
                         FuncionarioFormulario()
-                    } else if (tela.value == "horario") {
+                    } else if (tela.value == "agenda") {
+                        AgendaFormulario()
+                    } else if (tela.value == "bloqueio") {
+                        BloqueioAgendaFormulario()
+                    }  else if (tela.value == "horario") {
                         HorarioDisponivelFormulario()
+                    } else if (tela.value == "psicologo") {
+                        PsicologoFormulario()
+                    } else if (tela.value == "recepcionista") {
+                        RecepcionistaFormulario()
+                    } else if (tela.value == "tipo") {
+                        TipoAtendimentoFormulario()
                     } else if (tela.value == "prontuario") {
                         ProntuarioFormulario()
                     } else if (tela.value == "sala") {
                         SalaAtendimentoFormulario()
+                    } else if (tela.value == "pagamento") {
+                        PagamentoFormulario()
                     }
 
 
