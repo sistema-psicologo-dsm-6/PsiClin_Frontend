@@ -19,10 +19,10 @@ Os nomes abaixo são as identificações registradas nos commits do frontend. As
 
 | Integrante (identificação Git) | Entidades/formulários do frontend |
 | --- | --- |
-| Eduardajs3 | Paciente e Horário Disponível |
+| Eduardajs3 | Paciente, Horário Disponível e Pagamento|
 | Dalvinha75 | Prontuário e Sala de Atendimento |
 | agostinho58 | Agenda e BloqueioAgenda |
-| Hush9k | Entidade 1 e Entidade 2 |
+| Hush9k | Funcionario, Convenio e EvolucaoClinica |
 | westesmso| Psicologo, Recepcionista e TipoAtendimento|
 
 
