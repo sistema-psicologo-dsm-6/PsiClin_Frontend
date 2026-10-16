@@ -1,139 +1,132 @@
-# PsiClin - Frontend
+# PsiClin_Frontend
 
-Aplicação multiplataforma para apoiar a gestão de uma clínica de psicologia. A interface foi desenvolvida com Kotlin e Compose Multiplatform, compartilhando a maior parte do código entre Android, navegador e desktop.
+## Identificação do projeto
 
-## Sobre o projeto
+- **Projeto:** PsiClin_Frontend — protótipo de interface para uma clínica de psicologia.
+- **Grupo:** Agostinho Benigno Monteiro Gutierrez, Afonso Rocha Sprocatti, Eduarda Josileide da Silva, Lindalva Carlos da Silva, Westes Mesquita da Silva Oliveira.
+- **Repositório do backend:** https://github.com/sistema-psicologo-dsm-6/PsiClin-Backend
+- **Repositório do frontend:** [https://github.com/sistema-psicologo-dsm-6/PsiClinFrontend](https://github.com/sistema-psicologo-dsm-6/PsiClin_Frontend.git)
+  
+## Integrantes e entidades
 
-O PsiClin reúne telas para cadastrar e organizar informações da rotina de uma clínica, como pacientes, profissionais, agenda, atendimentos e prontuários. O projeto é dividido em dois repositórios:
 
-- **Frontend:** interface multiplataforma neste repositório.
-- **Backend:** API REST e persistência de dados no [repositório PsiClin-Backend](https://github.com/sistema-psicologo-dsm-6/PsiClin-Backend).
-
-No estado atual, o frontend apresenta formulários e navegação local entre as telas. Os formulários ainda não estão integrados à API nem persistem os dados; as informações inseridas não são mantidas após o encerramento da aplicação.
-
-## Integrantes e participação
-
-O grupo do projeto é **sistema-psicologo-dsm-6**. A tabela registra as contribuições identificadas no histórico de commits do frontend:
-
-| Integrante | Usuário no GitHub | Participação no frontend |
+| Integrante (GitHub) | Nomes dos usuários | Entidades |
 | --- | --- | --- |
-| Agostinho Benigno Monteiro Gutierrez | [agostinho58](https://github.com/agostinho58) | Formulários de agenda e bloqueio de agenda. |
-| Afonso Rocha Sprocatti | [Hush9K](https://github.com/Hush9K) | Formulários de convênio, evolução clínica e funcionário. |
-| Eduarda Josileide da Silva | [Eduardajs3](https://github.com/Eduardajs3) | Formulários de paciente e horário disponível. |
-| Lindalva Carlos da Silva | [Dalvinha75](https://github.com/Dalvinha75) | Formulários de prontuário e sala de atendimento; integração dos formulários ao menu e padronização de botões. |
-| Westes Mesquita da Silva Oliveira | [karyanpierrot](https://github.com/karyanpierrot) | Formulários de psicólogo, recepcionista e tipo de atendimento |
+| agostinho58| Agostinho Benigno Monteiro Gutierrez | Agenda, BloqueioAgenda |
+| Dalvinha75 |  Lindalva Carlos da Silva | Prontuario, SalaAtendimento |
+| Eduardajs3 | Eduarda Josileide da Silva | Paciente, HorarioDisponivel, Pagamento |
+| Hush9K |Afonso Rocha Sprocatti | Funcionario, Convenio, EvolucaoClinica |
+| westes.mso | Westes Mesquita da Silva Oliveira | Psicologo, Recepcionista, TipoAtendimento|
 
-## Funcionalidades disponíveis
+### Entidades do projeto
 
-O menu principal permite abrir os formulários de:
+O projeto contém modelos para:
 
-- Paciente
-- Funcionário
-- Convênio
-- Horário disponível
 - Agenda
 - Bloqueio de agenda
-- Psicólogo e recepcionista
-- Tipo de atendimento
-- Prontuário e sala de atendimento
+- Convênio
 - Evolução clínica
+- Funcionário
+- Horário disponível
+- Paciente
+- Pagamento
+- Prontuário
+- Psicólogo
+- Recepcionista
+- Sala de atendimento
+- Tipo de atendimento
 
-Essas telas são a interface atual do projeto. O cadastro definitivo, a autenticação e a comunicação com o backend ainda não estão disponíveis no frontend.
+Cada modelo está em `shared/src/commonMain/kotlin/edu/front/psi/clin/model/`, e os formulários correspondentes estão no pacote `edu.front.psi.clin`, em `shared/src/commonMain/kotlin/edu/front/psi/clin/`.
 
-## Tecnologias
+## Descrição da aplicação
 
-- Kotlin 2.4.20
-- Compose Multiplatform 1.12.1 e Material 3
-- Gradle 9.5.1, executado pelo Gradle Wrapper
-- JDK 21
-- Android, navegador (WebAssembly ou JavaScript) e desktop (JVM)
+O FrontPsiClinic é um protótipo multiplataforma de interface para organizar cadastros e informações de uma clínica de psicologia. A aplicação reúne formulários de pacientes, profissionais, agenda, prontuários, pagamentos e outros dados relacionados ao atendimento.
 
-## Estrutura do projeto
+A centralização dessas telas busca facilitar a visualização das áreas funcionais da clínica e demonstrar como seus dados podem ser inseridos. O projeto ainda é uma interface demonstrativa: não possui conexão com backend, banco de dados ou persistência. 
 
-| Módulo ou diretório | Responsabilidade |
-| --- | --- |
-| `shared/src/commonMain/kotlin/edu/front/psi/clin/` | Interface Compose compartilhada, navegação e formulários. |
-| `shared/src/commonMain/kotlin/edu/front/psi/clin/model/` | Modelos de dados usados pelas telas. |
-| `shared/src/androidMain/`, `shared/src/jsMain/`, `shared/src/wasmJsMain/` e `shared/src/jvmMain/` | Implementações específicas de cada plataforma. |
-| `androidApp/` | Aplicativo Android. |
-| `webApp/` | Aplicação executável no navegador. |
-| `desktopApp/` | Aplicação desktop para JVM. |
+## Tecnologias utilizadas
 
-## Pré-requisitos
+- Kotlin Multiplatform
+- Compose Multiplatform
+- Material 3
+- Gradle 9.5.1 com Gradle Wrapper
+- Android, Desktop (JVM), JavaScript e WebAssembly como alvos configurados
 
-- JDK 21 instalado e disponível no `PATH`.
-- Navegador compatível para executar a versão Web.
-- Para compilar ou executar no Android, Android SDK e um emulador ou dispositivo. O Android Studio pode ser usado para configurar o SDK e iniciar o aplicativo.
+Versões principais configuradas em `gradle/libs.versions.toml`: Kotlin 2.4.20, Compose Multiplatform 1.12.1 e Material 3 1.12.0-alpha03.
 
-O Gradle Wrapper incluído no repositório baixa e utiliza a versão de Gradle configurada pelo projeto.
+## Arquitetura e organização
 
-## Instalação e execução
+ A arquitetura existente é a do frontend multiplataforma:
 
-Clone o repositório e entre na pasta do projeto:
+| Camada/área | Implementação |
+|---|---|
+| Interface e navegação | `shared/src/commonMain/kotlin/edu/front/psi/clin/` — telas de formulário, menu e componentes visuais Compose |
+| Modelos de domínio | `shared/src/commonMain/kotlin/edu/front/psi/clin/model/` — entidades Kotlin compartilhadas |
+| Recursos compartilhados | `shared/src/commonMain/composeResources/` |
+| Inicialização Android | `androidApp/src/main/` |
+| Inicialização Desktop | `desktopApp/src/main/kotlin/` |
+| Inicialização Web | `webApp/src/webMain/kotlin/` e `webApp/src/webMain/resources/` |
+
+Os formulários e modelos ficam no módulo `shared` para serem reutilizados pelos alvos Android, Desktop e Web. 
+
+## Requisitos
+
+- Git para clonar o repositório remoto.
+- JDK em uma versão compatível com a configuração do projeto.
+- Android Studio com Android SDK para executar no Android.
+- Navegador compatível para executar as versões Web.
+
+O Gradle Wrapper baixa a versão necessária do Gradle na primeira execução. A compilação também pode baixar dependências, portanto é necessário acesso à internet na configuração inicial.
+
+## Instalação
+
+Clone o repositório remoto do grupo:
 
 ```powershell
 git clone https://github.com/sistema-psicologo-dsm-6/PsiClin_Frontend.git
 cd PsiClin_Frontend
 ```
 
-Os comandos abaixo devem ser executados na raiz do repositório.
+Abra a pasta do projeto no VS Code, Android Studio ou use o terminal com o Gradle Wrapper incluído.
 
-### Navegador
+## Execução
 
-Para iniciar a versão WebAssembly no Windows (PowerShell):
-
-```powershell
-.\gradlew.bat :webApp:wasmJsBrowserDevelopmentRun
-```
-
-No Linux ou macOS:
-
-```bash
-./gradlew :webApp:wasmJsBrowserDevelopmentRun
-```
-
-O Gradle inicia o servidor de desenvolvimento. Abra no navegador o endereço local indicado no terminal.
-
-Para executar a versão JavaScript, use `:webApp:jsBrowserDevelopmentRun` no lugar de `:webApp:wasmJsBrowserDevelopmentRun`.
+Execute os comandos a partir da raiz do projeto. No Windows, use `.\gradlew.bat`; no macOS/Linux, use `./gradlew`.
 
 ### Desktop
-
-Windows (PowerShell):
 
 ```powershell
 .\gradlew.bat :desktopApp:run
 ```
 
-Linux ou macOS:
+O aplicativo é aberto em uma janela Desktop.
 
-```bash
-./gradlew :desktopApp:run
+### WebAssembly
+
+```powershell
+.\gradlew.bat :webApp:wasmJsBrowserDevelopmentRun
+```
+
+O Gradle inicia o servidor de desenvolvimento e abre a aplicação no navegador. O endereço local é informado no terminal.
+
+### JavaScript
+
+```powershell
+.\gradlew.bat :webApp:jsBrowserDevelopmentRun
 ```
 
 ### Android
 
-Com Android SDK configurado, compile o APK de depuração:
+Conecte um dispositivo Android ou inicie um emulador configurado no Android Studio. Para gerar o APK de depuração:
 
 ```powershell
 .\gradlew.bat :androidApp:assembleDebug
 ```
 
-O APK será gerado em `androidApp/build/outputs/apk/debug/`. Para executar o aplicativo, abra o projeto no Android Studio e selecione um emulador ou dispositivo conectado.
+O APK é gerado em `androidApp/build/outputs/apk/debug/`. Também é possível abrir o projeto no Android Studio, selecionar a configuração Android e executar no dispositivo ou emulador.
 
-## Testes
+## Acesso à aplicação
 
-Execute os testes da plataforma desejada a partir da raiz do projeto:
-
-```powershell
-.\gradlew.bat :shared:jvmTest
-.\gradlew.bat :shared:wasmJsTest
-.\gradlew.bat :shared:jsTest
-.\gradlew.bat :shared:testAndroidHostTest
-```
-
-No Linux ou macOS, substitua `.\gradlew.bat` por `./gradlew`.
-
-## Repositórios
-
-- [PsiClin_Frontend](https://github.com/sistema-psicologo-dsm-6/PsiClin_Frontend)
-- [PsiClin-Backend](https://github.com/sistema-psicologo-dsm-6/PsiClin-Backend)
+- **Desktop:** a aplicação é acessada na janela aberta pelo comando `:desktopApp:run`.
+- **Web:** acesse no navegador o endereço local exibido pelo Gradle ao iniciar o servidor de desenvolvimento.
+- **Android:** instale e abra o APK gerado ou execute a aplicação diretamente pelo Android Studio em um dispositivo/emulador.

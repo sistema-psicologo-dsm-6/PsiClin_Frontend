@@ -202,7 +202,7 @@ fun App() {
                         MenuItem("Cadastrar Psicólogo", "pessoa", "psicologo"),
                         MenuItem("Cadastrar Recepcionista", "pessoa", "recepcionista"),
                         MenuItem("Cadastrar Tipo de Atendimento", "documento", "tipo"),
-
+                       MenuItem("Cadastrar Pagamento", "documento", "pagamento"),
                         MenuItem("Cadastrar Prontuário", "documento", "prontuario"),
                         MenuItem("Cadastrar Sala de Atendimento", "documento", "sala"),
                         MenuItem("Cadastrar Evolução Clínica", "documento", "evolucao"),
@@ -249,6 +249,8 @@ fun App() {
                         ProntuarioFormulario()
                     } else if (tela.value == "sala") {
                         SalaAtendimentoFormulario()
+                    } else if (tela.value == "pagamento") {
+                        PagamentoFormulario()
                     }
 
 

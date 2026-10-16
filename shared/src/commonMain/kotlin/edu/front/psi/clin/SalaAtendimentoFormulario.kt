@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.graphics.Color
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.ButtonDefaults
 
 @Composable
@@ -124,10 +123,9 @@ fun SalaAtendimentoFormulario() {
                     dataCadastro.value = ""
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFE8F1EB),
+                    containerColor = Color(0xFFF6F3EC),
                     contentColor = VerdeClinica
                 ),
-                border = BorderStroke(1.dp, Color(0xFFA8C9B2)),
                 modifier = Modifier.weight(1f)
             ) {
                 Text("Limpar Campos")
